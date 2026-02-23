@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeAHero | Profile</title>
+    <meta
+      name="description"
+      content="Demo BeAHero profile with adaptive hero avatar variants."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="profile-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="BeAHero home">
+          <svg
+            class="brand-logo"
+            viewBox="0 0 120 120"
+            role="img"
+            aria-label="Cape and heart logo"
+          >
+            <defs>
+              <linearGradient id="logoGradientProfile" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#7db8ff" />
+                <stop offset="100%" stop-color="#8f7dff" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M20 24 C44 26, 76 26, 100 24 L92 88 C70 104, 50 104, 28 88 Z"
+              fill="url(#logoGradientProfile)"
+            />
+            <path
+              d="M60 48 C55 38, 38 40, 38 54 C38 67, 55 76, 60 83 C65 76, 82 67, 82 54 C82 40, 65 38, 60 48 Z"
+              fill="#ffffff"
+            />
+          </svg>
+          <span class="brand-wordmark">BeAHero</span>
+        </a>
+        <nav aria-label="Main">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html?user=sarah&variant=2" aria-current="page">Profile</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="section">
+      <div class="container profile-layout">
+        <section class="card profile-main" aria-label="Hero profile summary">
+          <div class="profile-head">
+            <div class="avatar-card" id="avatar" data-variant="1" aria-label="Penguin hero avatar">
+              <div class="penguin-body">
+                <div class="penguin-belly"></div>
+                <div class="penguin-eye penguin-eye-left"></div>
+                <div class="penguin-eye penguin-eye-right"></div>
+                <div class="penguin-beak"></div>
+                <div class="penguin-cape"></div>
+                <div class="penguin-heart" aria-hidden="true">❤</div>
+              </div>
+            </div>
+
+            <div>
+              <p class="eyebrow">Demo Hero Profile</p>
+              <h1 id="profile-name">Sarah Taylor</h1>
+              <p id="profile-bio">
+                Caring for mum while balancing work and family life, one brave
+                day at a time.
+              </p>
+            </div>
+          </div>
+
+          <section aria-labelledby="hero-level-heading" class="hero-level">
+            <h2 id="hero-level-heading">Hero Level</h2>
+            <div class="level-row">
+              <strong id="hero-level-label">Level 8 - Steady Supporter</strong>
+              <span id="hero-level-pct">72%</span>
+            </div>
+            <div class="progress-track" role="img" aria-label="Hero level progress">
+              <div class="progress-fill" id="hero-progress" style="width: 72%"></div>
+            </div>
+          </section>
+
+          <section aria-labelledby="badges-heading" class="badges-section">
+            <h2 id="badges-heading">Achievement badges</h2>
+            <div class="badges-row">
+              <span class="badge">Kind Voice</span>
+              <span class="badge">Calendar Keeper</span>
+              <span class="badge">Resource Finder</span>
+              <span class="badge">Self-care Star</span>
+            </div>
+          </section>
+
+          <section aria-labelledby="tabs-heading" class="tabs-section">
+            <h2 id="tabs-heading" class="sr-only">Profile tabs</h2>
+            <div class="tabs" role="tablist" aria-label="Profile sections">
+              <button class="tab is-active" role="tab" aria-selected="true">Overview</button>
+              <button class="tab" role="tab" aria-selected="false">Calendar</button>
+              <button class="tab" role="tab" aria-selected="false">Resources</button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="card scan-note" aria-label="NFC scan note">
+          <h2>Quick access</h2>
+          <p>Scan NFC to open this profile.</p>
+          <p class="small-note">
+            Tip: add this demo profile link to your NFC tag to make support easy
+            to access.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Prototype concept for family carers</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
