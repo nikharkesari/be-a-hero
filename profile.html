@@ -40,9 +40,26 @@
           <span class="brand-wordmark">BeAHero</span>
         </a>
         <nav aria-label="Main">
-          <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="profile.html?user=sarah&variant=2" aria-current="page">Profile</a></li>
+          <ul class="nav-list nav-icon-list">
+            <li>
+              <a class="icon-nav-link" href="index.html" aria-label="Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M3 10.5L12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-5a.5.5 0 0 1-.5-.5V15a2 2 0 0 0-4 0v5.5a.5.5 0 0 1-.5.5h-5A1.5 1.5 0 0 1 3 19.5v-9z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="icon-nav-link"
+                href="profile.html?user=sarah&variant=2"
+                aria-current="page"
+                aria-label="Profile"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12zm0 2c-4.14 0-7.5 2.69-7.5 6a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1c0-3.31-3.36-6-7.5-6z" />
+                </svg>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -52,15 +69,14 @@
       <div class="container profile-layout">
         <section class="card profile-main" aria-label="Hero profile summary">
           <div class="profile-head">
-            <div class="avatar-card" id="avatar" data-variant="1" aria-label="Penguin hero avatar">
-              <div class="penguin-body">
-                <div class="penguin-belly"></div>
-                <div class="penguin-eye penguin-eye-left"></div>
-                <div class="penguin-eye penguin-eye-right"></div>
-                <div class="penguin-beak"></div>
-                <div class="penguin-cape"></div>
-                <div class="penguin-heart" aria-hidden="true">❤</div>
+            <div class="avatar-card" id="avatar" aria-label="Penguin hero avatar picker">
+              <button class="avatar-control" id="avatar-prev" type="button" aria-label="Previous avatar">
+                ‹
+              </button>
+              <div class="avatar-image-wrap">
+                <img id="avatar-image" src="assets/avatars/1.png" alt="Avatar 1" />
               </div>
+              <button class="avatar-control" id="avatar-next" type="button" aria-label="Next avatar">›</button>
             </div>
 
             <div>
