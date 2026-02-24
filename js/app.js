@@ -53,6 +53,7 @@
       const avatarNumber = activeAvatar + 1;
       if (avatarImage) {
         avatarImage.src = getAvatarSource(avatarNumber);
+        avatarImage.src = `assets/avatars/${avatarNumber}.png`;
         avatarImage.alt = `Avatar ${avatarNumber}`;
       }
     };
@@ -77,6 +78,11 @@
     };
 
     resolveAvatarExtension();
+    if (Number.isInteger(variantParam) && variantParam >= 1 && variantParam <= avatarCount) {
+      setAvatar(variantParam - 1);
+    } else {
+      setAvatar(0);
+    }
 
     avatarPrev?.addEventListener("click", () => setAvatar(activeAvatar - 1));
     avatarNext?.addEventListener("click", () => setAvatar(activeAvatar + 1));
