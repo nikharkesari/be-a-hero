@@ -1,0 +1,57 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BeAHero penguin community illustration">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F3FF"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <radialGradient id="heart" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(602 370) rotate(90) scale(90 100)">
+      <stop stop-color="#FF96B9"/>
+      <stop offset="1" stop-color="#F25B8E"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="640" rx="42" fill="url(#bg)"/>
+  <path d="M228 86C360 6 520 38 607 142" stroke="#E9C8FF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M976 86C844 6 684 38 597 142" stroke="#D5CAFF" stroke-width="10" stroke-linecap="round"/>
+
+  <g transform="translate(175,180)">
+    <ellipse cx="100" cy="120" rx="85" ry="95" fill="#232836"/>
+    <ellipse cx="100" cy="132" rx="58" ry="66" fill="#FFFDF8"/>
+    <ellipse cx="86" cy="98" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="114" cy="98" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="100" cy="112" rx="12" ry="8" fill="#FFC64D"/>
+    <rect x="36" y="170" width="128" height="18" rx="9" fill="#F45D80"/>
+  </g>
+
+  <g transform="translate(345,160)">
+    <ellipse cx="100" cy="125" rx="88" ry="100" fill="#252B3C"/>
+    <ellipse cx="100" cy="138" rx="60" ry="70" fill="#FFFDF8"/>
+    <ellipse cx="85" cy="102" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="115" cy="102" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="100" cy="116" rx="12" ry="8" fill="#FFC64D"/>
+    <rect x="32" y="177" width="136" height="18" rx="9" fill="#F45D80"/>
+  </g>
+
+  <g transform="translate(520,175)">
+    <ellipse cx="100" cy="120" rx="84" ry="96" fill="#242A39"/>
+    <ellipse cx="100" cy="132" rx="56" ry="66" fill="#FFFDF8"/>
+    <ellipse cx="86" cy="98" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="114" cy="98" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="100" cy="112" rx="12" ry="8" fill="#FFC64D"/>
+    <rect x="36" y="170" width="128" height="18" rx="9" fill="#F45D80"/>
+  </g>
+
+  <g transform="translate(695,180)">
+    <ellipse cx="100" cy="120" rx="85" ry="95" fill="#232836"/>
+    <ellipse cx="100" cy="132" rx="58" ry="66" fill="#FFFDF8"/>
+    <ellipse cx="86" cy="98" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="114" cy="98" rx="7" ry="9" fill="#111827"/>
+    <ellipse cx="100" cy="112" rx="12" ry="8" fill="#FFC64D"/>
+    <rect x="36" y="170" width="128" height="18" rx="9" fill="#F45D80"/>
+  </g>
+
+  <path d="M600 430C578 384 502 392 502 448C502 495 567 523 600 558C633 523 698 495 698 448C698 392 622 384 600 430Z" fill="url(#heart)"/>
+  <circle cx="154" cy="122" r="7" fill="#FFD7E5"/>
+  <circle cx="1046" cy="132" r="7" fill="#FFE4C9"/>
+  <circle cx="904" cy="66" r="6" fill="#D3D9FF"/>
+  <circle cx="284" cy="66" r="6" fill="#FFD7E5"/>
+</svg>
