@@ -44,40 +44,17 @@
     const avatarCount = 8;
     let touchStartX = null;
     let activeAvatar = 0;
-    let avatarExtension = "jpg";
-
-    const getAvatarSource = (avatarNumber) => `assets/avatars/${avatarNumber}.${avatarExtension}`;
 
     const setAvatar = (index) => {
       activeAvatar = (index + avatarCount) % avatarCount;
       const avatarNumber = activeAvatar + 1;
       if (avatarImage) {
-        avatarImage.src = getAvatarSource(avatarNumber);
         avatarImage.src = `assets/avatars/${avatarNumber}.png`;
         avatarImage.alt = `Avatar ${avatarNumber}`;
       }
     };
 
     const variantParam = Number.parseInt(params.get("variant") || "1", 10);
-    const initialAvatarIndex =
-      Number.isInteger(variantParam) && variantParam >= 1 && variantParam <= avatarCount
-        ? variantParam - 1
-        : 0;
-
-    const resolveAvatarExtension = () => {
-      const probeImage = new Image();
-      probeImage.onload = () => {
-        avatarExtension = "jpg";
-        setAvatar(initialAvatarIndex);
-      };
-      probeImage.onerror = () => {
-        avatarExtension = "png";
-        setAvatar(initialAvatarIndex);
-      };
-      probeImage.src = "assets/avatars/1.jpg";
-    };
-
-    resolveAvatarExtension();
     if (Number.isInteger(variantParam) && variantParam >= 1 && variantParam <= avatarCount) {
       setAvatar(variantParam - 1);
     } else {
