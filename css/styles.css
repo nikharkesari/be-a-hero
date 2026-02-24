@@ -71,6 +71,7 @@ h2 { font-size: clamp(1.2rem, 4vw, 1.65rem); }
   min-height: 180px;
   border-radius: 1rem;
   background: linear-gradient(160deg, #f4f7ff, #f9f3ff);
+  position: relative;
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -119,7 +120,7 @@ h2 { font-size: clamp(1.2rem, 4vw, 1.65rem); }
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: rgba(255,255,255,.95);
   border-top: 1px solid #dfe5ff; display: grid; grid-template-columns: repeat(4, 1fr);
 }
-.bottom-nav a { text-align: center; padding: .55rem .35rem; font-weight: 600; color: #5d6796; }
+.bottom-nav a { text-align: center; padding: .65rem .35rem; font-weight: 600; color: #5d6796; }
 .bottom-nav a:hover { background: #eef2ff; }
 .nav-item {
   display: grid;
