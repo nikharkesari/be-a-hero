@@ -160,13 +160,13 @@ h2 { font-size: clamp(1.2rem, 4vw, 1.65rem); }
 }
 
 /* profile page */
-.profile-layout { display: grid; grid-template-columns: 1fr 320px; gap: 1rem; }
-.profile-head { display: grid; grid-template-columns: 180px 1fr; gap: 1rem; align-items: center; margin-bottom: 1.4rem; }
+.profile-layout { display: grid; grid-template-columns: 1fr; gap: .9rem; }
+.profile-head { display: grid; grid-template-columns: 1fr; gap: .9rem; align-items: start; margin-bottom: 1rem; }
 .avatar-card {
   border-radius: var(--radius-lg);
   padding: .7rem;
   background: #ffffff;
-  min-height: 180px;
+  min-height: 170px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -209,7 +209,7 @@ h2 { font-size: clamp(1.2rem, 4vw, 1.65rem); }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
 @media (max-width: 980px) {
-  .hero-app-card, .profile-layout, .profile-head { grid-template-columns: 1fr; }
+  .hero-app-card { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
   .brand-wordmark { font-size: 1.1rem; }
