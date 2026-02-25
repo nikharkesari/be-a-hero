@@ -80,15 +80,4 @@
     });
   }
 
-  const tabs = document.querySelectorAll(".tab");
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((item) => {
-        item.classList.remove("is-active");
-        item.setAttribute("aria-selected", "false");
-      });
-      tab.classList.add("is-active");
-      tab.setAttribute("aria-selected", "true");
-    });
-  });
 })();
