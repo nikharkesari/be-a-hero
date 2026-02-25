@@ -1,8 +1,6 @@
 (function () {
   const params = new URLSearchParams(window.location.search);
   const userKey = (params.get("user") || "sarah").toLowerCase();
-  const variantParam = Number.parseInt(params.get("variant") || "1", 10);
-  const safeVariant = [1, 2, 3].includes(variantParam) ? variantParam : 1;
 
   const demoUsers = {
     sarah: {
@@ -31,7 +29,6 @@
     const heroLevelLabel = document.getElementById("hero-level-label");
     const heroLevelPct = document.getElementById("hero-level-pct");
     const heroProgress = document.getElementById("hero-progress");
-    const avatar = document.getElementById("avatar");
     const selectedUser = demoUsers[userKey] || demoUsers.sarah;
 
     profileName.textContent = selectedUser.name;
@@ -40,9 +37,64 @@
     heroLevelPct.textContent = `${selectedUser.levelPercent}%`;
     heroProgress.style.width = `${selectedUser.levelPercent}%`;
 
-    if (avatar) {
-      avatar.setAttribute("data-variant", String(safeVariant));
-    }
+    const avatarImage = document.getElementById("avatar-image");
+    const avatarPrev = document.getElementById("avatar-prev");
+    const avatarNext = document.getElementById("avatar-next");
+    const avatarCard = document.getElementById("avatar");
+    const avatarCount = 8;
+    let touchStartX = null;
+    let activeAvatar = 0;
+    let avatarExtension = "jpg";
+
+    const getAvatarSource = (avatarNumber) => `assets/avatars/${avatarNumber}.${avatarExtension}`;
+
+    const setAvatar = (index) => {
+      activeAvatar = (index + avatarCount) % avatarCount;
+      const avatarNumber = activeAvatar + 1;
+      if (avatarImage) {
+        avatarImage.src = getAvatarSource(avatarNumber);
+        avatarImage.alt = `Avatar ${avatarNumber}`;
+      }
+    };
+
+    const variantParam = Number.parseInt(params.get("variant") || "1", 10);
+    const initialAvatarIndex =
+      Number.isInteger(variantParam) && variantParam >= 1 && variantParam <= avatarCount
+        ? variantParam - 1
+        : 0;
+
+    const resolveAvatarExtension = () => {
+      const probeImage = new Image();
+      probeImage.onload = () => {
+        avatarExtension = "jpg";
+        setAvatar(initialAvatarIndex);
+      };
+      probeImage.onerror = () => {
+        avatarExtension = "png";
+        setAvatar(initialAvatarIndex);
+      };
+      probeImage.src = "assets/avatars/1.jpg";
+    };
+
+    resolveAvatarExtension();
+
+    avatarPrev?.addEventListener("click", () => setAvatar(activeAvatar - 1));
+    avatarNext?.addEventListener("click", () => setAvatar(activeAvatar + 1));
+
+    avatarCard?.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    });
+
+    avatarCard?.addEventListener("touchend", (event) => {
+      if (touchStartX === null) return;
+      const touchEndX = event.changedTouches[0].clientX;
+      const delta = touchEndX - touchStartX;
+      if (Math.abs(delta) > 35) {
+        if (delta < 0) setAvatar(activeAvatar + 1);
+        if (delta > 0) setAvatar(activeAvatar - 1);
+      }
+      touchStartX = null;
+    });
   }
 
   const tabs = document.querySelectorAll(".tab");
